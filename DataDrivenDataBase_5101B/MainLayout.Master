@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainLayout.master.cs" Inherits="DataDrivenDataBase_5101B.MainLayout" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>LIST OF STUDENTS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="~/Content/reset.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="StudentList" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="StudentAdd" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="StudentUpdate" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
