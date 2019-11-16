@@ -34,13 +34,21 @@ namespace DataDrivenDataBase_5101B
                     {    
                         //fetching student's first name from database on the basis of student number used as username.
                         Dictionary<String, String> student_record = db.FindStudent(Username);
-                        if(Password == student_record["STUDENTFNAME"])
+                        //checking if record exists
+                        if (student_record.Contains(new KeyValuePair<string, string>("row", "0")))
                         {
-                            Response.Redirect("~/test.html");
+                            display.InnerHtml = "No record found";
                         }
                         else
                         {
-                            display.InnerHtml = "INVALID USERNAME OR PASSWORD";
+                            if (Password == student_record["STUDENTFNAME"])
+                            {
+                                Response.Redirect("~/test.html");
+                            }
+                            else
+                            {
+                                display.InnerHtml = "INVALID USERNAME OR PASSWORD";
+                            }
                         }
                     }
                     //if username is an admin username

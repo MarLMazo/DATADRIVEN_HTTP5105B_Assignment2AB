@@ -8,15 +8,17 @@
 </head>
 <body>
     <div id="display" runat="server"></div>
-    <form id="loginform" runat="server">
+    <form id="loginform" runat="server" method="get">
         
         <div>
             <label for="username">USERNAME:</label>
             <asp:TextBox ID="username" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator runat="server" ControlToValidate="username" ErrorMessage="Username field empty" ForeColor="IndianRed"></asp:RequiredFieldValidator>
         </div>
         <div>
             <label for="password">PASSWORD:</label>
             <asp:TextBox ID="password" TextMode="Password" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator runat="server" ControlToValidate="password" ErrorMessage="Username field empty" ForeColor="IndianRed"></asp:RequiredFieldValidator>
         </div>
 
         <button type="submit" runat="server">LOGIN</button>

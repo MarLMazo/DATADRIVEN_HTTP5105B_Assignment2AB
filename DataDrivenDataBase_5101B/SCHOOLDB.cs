@@ -121,29 +121,37 @@ namespace DataDrivenDataBase_5101B
                 MySqlCommand cmd = new MySqlCommand(query, Connect);
                 //grab the result set
                 MySqlDataReader resultset = cmd.ExecuteReader();
+                
+                    //Create a list of students (although we're only trying to get 1)
+                    List<Dictionary<String, String>> Students = new List<Dictionary<String, String>>();
 
-                //Create a list of students (although we're only trying to get 1)
-                List<Dictionary<String, String>> Students = new List<Dictionary<String, String>>();
-
-                //read through the result set
-                while (resultset.Read())
-                {
-                    //information that will store a single student
-                    Dictionary<String, String> Student = new Dictionary<String, String>();
-
-                    //Look at each column in the result set row, add both the column name and the column value to our Student dictionary
-                    for (int i = 0; i < resultset.FieldCount; i++)
+                    //read through the result set
+                    while (resultset.Read())
                     {
-                        Debug.WriteLine("Attempting to transfer data of " + resultset.GetName(i));
-                        Debug.WriteLine("Attempting to transfer data of " + resultset.GetString(i));
-                        Student.Add(resultset.GetName(i), resultset.GetString(i));
+                        //information that will store a single student
+                        Dictionary<String, String> Student = new Dictionary<String, String>();
 
+                        //Look at each column in the result set row, add both the column name and the column value to our Student dictionary
+
+                        for (int i = 0; i < resultset.FieldCount; i++)
+                        {
+                            Debug.WriteLine("Attempting to transfer data of " + resultset.GetName(i));
+                            Debug.WriteLine("Attempting to transfer data of " + resultset.GetString(i));
+                            Student.Add(resultset.GetName(i), resultset.GetString(i));
+
+                        }
+                        //Add the student to the list of students
+                        Students.Add(Student);
                     }
-                    //Add the student to the list of students
-                    Students.Add(Student);
+                if(Students.Count>0)
+                {
+                    student = Students[0]; //get the first student;
                 }
-
-                student = Students[0]; //get the first student
+                else
+                {
+                    student.Add("row", "0");
+                }
+                    
 
             }
             catch (Exception ex)
