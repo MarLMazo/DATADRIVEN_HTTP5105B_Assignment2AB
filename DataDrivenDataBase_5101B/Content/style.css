@@ -48,12 +48,13 @@ h1 {
 }
 
 .cwidth {
-    height:50px;
+    min-height:50px;
     width:100%;
     background-color:darkcyan;
     border:solid;
     border-color:aliceblue;
     color:azure;
+    position:relative;
 }
 
 .title {
@@ -64,8 +65,10 @@ h1 {
 }
 
 .footerContent {
-    padding-top:36px;
+    position:absolute;
     text-align:center;
+    width:100%;
     font-size:1em;
+    bottom:0;
 }
 

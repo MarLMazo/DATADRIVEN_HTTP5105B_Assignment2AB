@@ -12,7 +12,7 @@ namespace DataDrivenDataBase_5101B
 {
     public partial class StudentList : System.Web.UI.Page
     {
-
+        //Strings to be used to send values to the other aspx file
         public static string student_fname = "";
         public static string student_lname = "";
         public static string student_number = "";
@@ -33,19 +33,20 @@ namespace DataDrivenDataBase_5101B
             Button BtnAdd = new Button()
             {
                 Text = "Add",
-
             };
 
             students_result.Controls.Add(BtnAdd);
+            //Creating eventlistener to the button BtnAdd
             BtnAdd.Click += new EventHandler(AddData);
 
-            int i = 0;
+            //int i = 0;
+            //Using Christine Bittle In-class Example November 8,2019
             var db = new SCHOOLDB();
             List<Dictionary<String, String>> rs = db.List_Query("select * from students");
             foreach (Dictionary<String, String> row in rs)
             {
                 string studentID = row["STUDENTID"];
-
+                // Creating a DIV by g_mani on September 13,2013 https://forums.asp.net/t/1935334.aspx?creating+div+html+control+dynamically
                 System.Web.UI.HtmlControls.HtmlGenericControl createDiv = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
                 //createDiv.ID = studentID;
                 createDiv.Attributes["class"] = "listitem";
@@ -61,16 +62,12 @@ namespace DataDrivenDataBase_5101B
 
                 string enrolmentdate = row["ENROLMENTDATE"];
                 createDiv.InnerHtml += "<div class=\'col4last\'>" + enrolmentdate + "</div>";
-
-                students_result.Controls.Add(createDiv);
-
+              
                 Button BtnUpdate = new Button()
                 {
                     Text = "Update",
                     ID = "Update/" + studentID,
                     CssClass = studentID
-
-
                 };
 
                 Button BtnDel = new Button()
@@ -79,21 +76,19 @@ namespace DataDrivenDataBase_5101B
                     CssClass = studentID,
                     ID = "Delete/" + studentID,
                     OnClientClick = " return ValidateDelete()",
-
                 };
 
                 //Faragta Learning 2017 https://faragta.com/asp.net-web-forms/dynamically-add-button-control-to-aspnet-page.html
-                students_result.Controls.Add(BtnUpdate);
-                students_result.Controls.Add(BtnDel);
+                createDiv.Controls.Add(BtnUpdate);
+                createDiv.Controls.Add(BtnDel);
+
+                students_result.Controls.Add(createDiv);
 
                 BtnUpdate.Click += new EventHandler(UpdateData);
                 BtnDel.Click += new EventHandler(DeleteData);
-                i++;
+                //i++; For Debugging purposes only
 
             }
-
-
-
 
         }
 
@@ -116,12 +111,12 @@ namespace DataDrivenDataBase_5101B
             //Debug.WriteLine("ItworksDELETE");
             Button button = (Button)sender;
             //James in July 2,2013 https://stackoverflow.com/questions/17421375/how-to-get-numbers-from-a-string-and-store-it-in-a-variable-in-c-sharp
-            string[] number = button.ID.Split('/');
+            string[] numButtonID = button.ID.Split('/');
             //string buttonId = button.CssClass;       
-            var query = "DELETE FROM students WHERE STUDENTID =" + number[1];
+            var query = "DELETE FROM students WHERE STUDENTID =" + numButtonID[1];
             var db = new SCHOOLDB();
             List<Dictionary<String, String>> rs = db.List_Query(query);
-            Debug.WriteLine(query);
+            //Debug.WriteLine(query);
             students_result.InnerHtml = "<div class=\"listitem\"><div class=\"col4\">FIRST NAME</div><div class=\"col4\">LAST NAME</div><div class=\"col4\">STUDENT NUMBER</div><div class=\"col4last\">ENROLMENT DATE</div></div>";
             DisplayData();
             //Debug.WriteLine(buttonId);
@@ -137,12 +132,15 @@ namespace DataDrivenDataBase_5101B
             string studentnumber = "";
             string enrolmentdate = "";
 
+            //Getting values for the button that was click
             Button button1 = (Button)sender;
-            //string buttonId1 = button1.CssClass;
 
             //string buttonId1 = button1.ID;
-            string[] number = button1.ID.Split('/');
-            var query = "select * from students WHERE STUDENTID =" + number[1];
+            string[] numButtonID = button1.ID.Split('/');
+            //buttonID = "Update/+studentID"
+            //numButtonID will split into numButtonID[0] and numbButtonID[1]
+            //numButtonID[0] = "Update", numbButtonID[1] = studentID;
+            var query = "select * from students WHERE STUDENTID =" + numButtonID[1];
             var dbx = new SCHOOLDB();
             List<Dictionary<String, String>> rs = dbx.List_Query(query);
             foreach (Dictionary<String, String> row in rs)
@@ -158,16 +156,12 @@ namespace DataDrivenDataBase_5101B
             student_lname = studentlastname;
             student_number = studentnumber;
             student_enrolment = enrolmentdate;
-            student_ID = number[1];
-
-            StudentUpdateForm form2 = new StudentUpdateForm();
-
-
-            Debug.WriteLine(number[1]);
-
+            student_ID = numButtonID[1];
+            
+            Debug.WriteLine(numButtonID[1]);
 
             //Server.Transfer("~/updateStudent.aspx");
-            Response.Redirect("~/updateStudent.aspx");
+            Response.Redirect("~/StudentUpdateForm.aspx");
 
             //updateStudent frm2 = new updateStudent();
             //frm2.Show();
@@ -177,7 +171,7 @@ namespace DataDrivenDataBase_5101B
         void AddData(object sender, EventArgs e)
         {
             //Paul Grimshaw April 2012 in https://stackoverflow.com/questions/10180930/asp-net-open-new-webform-on-click-of-button
-            Response.Redirect("~/AddForm.aspx");
+            Response.Redirect("~/StudentAddForm.aspx");
         }
     }
 }
