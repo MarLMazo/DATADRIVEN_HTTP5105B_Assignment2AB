@@ -52,16 +52,16 @@ namespace DataDrivenDataBase_5101B
                 createDiv.Attributes["class"] = "listitem";
 
                 string studentfirstname = row["STUDENTFNAME"];
-                createDiv.InnerHtml += "<div class=\'col4\'>" + studentfirstname + "</div>";
+                createDiv.InnerHtml += "<div>" + studentfirstname + "</div>";
 
                 string studentlastname = row["STUDENTLNAME"];
-                createDiv.InnerHtml += "<div class=\'col4\'>" + studentlastname + "</div>";
+                createDiv.InnerHtml += "<div>" + studentlastname + "</div>";
 
                 string studentnumber = row["STUDENTNUMBER"];
-                createDiv.InnerHtml += "<div class=\'col4\'>" + studentnumber + "</div>";
+                createDiv.InnerHtml += "<div>" + studentnumber + "</div>";
 
                 string enrolmentdate = row["ENROLMENTDATE"];
-                createDiv.InnerHtml += "<div class=\'col4last\'>" + enrolmentdate + "</div>";
+                createDiv.InnerHtml += "<div>" + enrolmentdate + "</div>";
               
                 Button BtnUpdate = new Button()
                 {
@@ -117,11 +117,10 @@ namespace DataDrivenDataBase_5101B
             var db = new SCHOOLDB();
             List<Dictionary<String, String>> rs = db.List_Query(query);
             //Debug.WriteLine(query);
-            students_result.InnerHtml = "<div class=\"listitem\"><div class=\"col4\">FIRST NAME</div><div class=\"col4\">LAST NAME</div><div class=\"col4\">STUDENT NUMBER</div><div class=\"col4last\">ENROLMENT DATE</div></div>";
+            students_result.InnerHtml = "<div class=\"listitem\"><div>FIRST NAME</div><div>LAST NAME</div><div>STUDENT NUMBER</div><div>ENROLMENT DATE</div></div>";
             DisplayData();
             //Debug.WriteLine(buttonId);
             //Debug.WriteLine("End of Delete");
-
 
         }
 
