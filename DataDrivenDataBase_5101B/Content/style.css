@@ -2,3 +2,25 @@
     font-size:12px;
 }
 
+.cwidth {
+    height:50px;
+    width:100%;
+    background-color:darkcyan;
+    border:solid;
+    border-color:aliceblue;
+    color:azure;
+}
+
+.title {
+    font-family:Calibri;
+    font-size:2em;
+    padding:10px 10px;
+    text-align:center;
+}
+
+.footerContent {
+    padding-top:36px;
+    text-align:center;
+    font-size:1em;
+}
+
