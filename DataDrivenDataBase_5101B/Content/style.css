@@ -1,5 +1,50 @@
-﻿body {
-    font-size:12px;
+﻿html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1em;
+}
+
+#StudentList_students_result {
+    margin: 1em;
+    padding: 1em;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+}
+
+.listitem {
+    display: flex;
+    flex-flow: row wrap;
+    border: 1px solid black;
+    padding: 1em;
+    margin: 0.5em;
+}
+
+.listitem div {
+    width: 25%;
+    text-align: center;
+}
+
+.updatelistitem, .addlistitem {
+    width: 50%;
+    margin: 2em auto;
+}
+
+.updatelistitem input[type="text"], .addlistitem input[type="text"] {
+    width: 50%;
+    float: right;
+}
+
+.updatelistitem div, .addlistitem div {
+    height: 2em;
 }
 
 .cwidth {
