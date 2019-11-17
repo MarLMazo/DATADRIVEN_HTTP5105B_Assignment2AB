@@ -28,10 +28,9 @@ namespace DataDrivenDataBase_5101B
             string StudentFname = student_fname.Text.ToString();
             string StudentLname = student_lname.Text.ToString();
             string StudentNumber = student_number.Text.ToString();
-            string StudentEnrolment = student_enrolment.Text.ToString();
 
 
-            string query = "INSERT INTO students (STUDENTFNAME,STUDENTLNAME,STUDENTNUMBER,ENROLMENTDATE) VALUES ('" + StudentFname + "','" + StudentLname + "','" + StudentNumber + "','" + StudentEnrolment + "')";
+            string query = "INSERT INTO students (STUDENTFNAME,STUDENTLNAME,STUDENTNUMBER) VALUES ('" + StudentFname + "','" + StudentLname + "','" + StudentNumber + "')";
 
             var db = new SCHOOLDB();
             List<Dictionary<String, String>> rs = db.List_Query(query);

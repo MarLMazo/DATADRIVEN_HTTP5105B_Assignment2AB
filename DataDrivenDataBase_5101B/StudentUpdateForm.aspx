@@ -8,24 +8,24 @@
         <div>
             <label>Please Enter Student First Name</label>
             <asp:TextBox runat="server" ID="student_fname"></asp:TextBox>
-            <asp:RequiredFieldValidator runat="server" EnableClientScript="true" ControlToValidate="student_fname" ErrorMessage="Please enter student's first name"></asp:RequiredFieldValidator>           
-            <asp:RegularExpressionValidator runat="server" EnableClientScript="true" ControlToValidate="student_fname" ValidationExpression="^[a-zA-Z'.\s]{1,50}" ErrorMessage="Please enter a valid first name"/>
+            <asp:RequiredFieldValidator runat="server" EnableClientScript="true" ControlToValidate="student_fname" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>           
+            <asp:RegularExpressionValidator runat="server" EnableClientScript="true" ControlToValidate="student_fname" ValidationExpression="^[a-zA-Z'.\s]{1,50}" ErrorMessage="Please enter a valid first name" ForeColor="Red"/>
             <%--firstname validation reference- http://www.java2s.com/Tutorial/ASP.NET/0160__Validation/ValidateName.htm--%>
         </div>
             
         <div>
             <label>Please Enter Student Last Name</label>
             <asp:TextBox runat="server" ID="student_lname"></asp:TextBox>
-            <asp:RequiredFieldValidator runat="server" EnableClientScript="true" ControlToValidate="student_lname" ErrorMessage="Please enter student's last name"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator runat="server" EnableClientScript="true" ControlToValidate="student_lname" ValidationExpression="^[a-zA-Z'.\s]{1,50}" ErrorMessage="Please enter a valid last name"/>
+            <asp:RequiredFieldValidator runat="server" EnableClientScript="true" ControlToValidate="student_lname" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator runat="server" EnableClientScript="true" ControlToValidate="student_lname" ValidationExpression="^[a-zA-Z'.\s]{1,50}" ErrorMessage="Please enter a valid last name" ForeColor="Red"/>
             <%--lastname validation reference- http://www.java2s.com/Tutorial/ASP.NET/0160__Validation/ValidateName.htm--%>
         </div>
             
         <div>
             <label>Please Enter Student Number:</label>
             <asp:TextBox runat="server" ID="student_number"></asp:TextBox>
-            <asp:RegularExpressionValidator ForeColor="Red" runat="server" ControlToValidate="student_number" ErrorMessage="Enter a Valid Student Number!" ValidationExpression="^[N|n][0-9]{4}$"></asp:RegularExpressionValidator>
-            <asp:RegularExpressionValidator runat="server" EnableClientScrip="true" ControlToValidate="student_number" ValidationExpression="^[a-zA-Z0-9]+$" ErrorMessage="Enter a valid student number"/>
+            <asp:RequiredFieldValidator runat="server" EnableClientScript="true" ControlToValidate="student_number" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator runat="server" ControlToValidate="student_number" ErrorMessage="Enter a Valid Student Number!" ValidationExpression="^[N|n][0-9]{4}$" ForeColor="Red"></asp:RegularExpressionValidator>   
             <%--student number validator which only allows alpha numeric value, not the signs http://regexlib.com/REDetails.aspx?regexp_id=1014&AspxAutoDetectCookieSupport=1--%>
         </div>
             
@@ -39,8 +39,9 @@
         </div>--%>
                     
         <%-- <asp:Button id="Button1" Text="Submit"  OnClick="SubmitBtn_Click"  runat="server"/>--%>
-        <%-- This Gives me Error, why Am i Getting error for this one? --%>
-           
+        <%-- This Gives me Error, why Am i Getting error for this one? --%>        
     </div>
-
+    <div>
+        <p>This * means it is required</p>
+    </div>
 </asp:Content>
