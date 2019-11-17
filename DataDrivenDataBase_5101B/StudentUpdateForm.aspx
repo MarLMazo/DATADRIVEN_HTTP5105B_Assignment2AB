@@ -33,14 +33,14 @@
                 <%--student number validator which only allows alpha numeric value, not the signs http://regexlib.com/REDetails.aspx?regexp_id=1014&AspxAutoDetectCookieSupport=1--%>
             </div>
             
-            <div>
+            <%--<div>
                 <label>Please Enter Student Enrolment date</label>
                 <asp:TextBox runat="server" ID="student_enrolment"></asp:TextBox>  
                 <asp:RequiredFieldValidator runat="server" EnableClientScript="true" ControlToValidate="student_enrolment" ErrorMessage="Please enter enrolment date"></asp:RequiredFieldValidator>
                 
-                <%--<asp:RegularExpressionValidator runat="server" EnableClientScript="true" ControlToValidate="student_enrolment" ValidationExpression="^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$" ErrorMessage="Enter a valid enrolment date">
-                <student-enrolment date with format yyyy-mm-dd https://stackoverflow.com/questions/22061723/regex-date-validation-for-yyyy-mm-dd--%>
-            </div>
+                <asp:RegularExpressionValidator runat="server" EnableClientScript="true" ControlToValidate="student_enrolment" ValidationExpression="^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$" ErrorMessage="Enter a valid enrolment date">
+                <student-enrolment date with format yyyy-mm-dd https://stackoverflow.com/questions/22061723/regex-date-validation-for-yyyy-mm-dd
+            </div>--%>
                     
             <%-- <asp:Button id="Button1" Text="Submit"  OnClick="SubmitBtn_Click"  runat="server"/>--%>
             <%-- This Gives me Error, why Am i Getting error for this one? --%>

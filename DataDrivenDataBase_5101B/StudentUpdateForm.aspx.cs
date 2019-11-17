@@ -21,7 +21,7 @@ namespace DataDrivenDataBase_5101B
                 student_fname.Text = StudentList.student_fname.ToString();
                 student_lname.Text = StudentList.student_lname.ToString();
                 student_number.Text = StudentList.student_number.ToString();
-                student_enrolment.Text = StudentList.student_enrolment.ToString();
+                //student_enrolment.Text = StudentList.student_enrolment.ToString();
             }   
             updatestudentId = StudentList.student_ID;
 
@@ -40,7 +40,7 @@ namespace DataDrivenDataBase_5101B
             string StudentFname = student_fname.Text;
             string StudentLname = student_lname.Text;
             string StudentNumber = student_number.Text;
-            string EnrolmentDate = student_enrolment.Text;
+            //string EnrolmentDate = student_enrolment.Text;
 
             string query = "UPDATE students SET STUDENTFNAME = '" + StudentFname + "', STUDENTLNAME= '" + StudentLname + "', STUDENTNUMBER = '" + StudentNumber + "' WHERE STUDENTID = " + updatestudentId;
             // Getting Incorrect Value for dates
