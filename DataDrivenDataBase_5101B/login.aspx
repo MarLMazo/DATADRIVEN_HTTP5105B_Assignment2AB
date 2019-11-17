@@ -4,12 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>LOGIN_IN HUMBER</title>
 </head>
 <body>
+    <h1>Log In Your Account</h1>
     <div id="display" runat="server"></div>
-    <form id="loginform" runat="server" method="get">
-        
+    <form id="loginform" runat="server" method="get">        
         <div>
             <label for="username">USERNAME:</label>
             <asp:TextBox ID="username" runat="server"></asp:TextBox>
