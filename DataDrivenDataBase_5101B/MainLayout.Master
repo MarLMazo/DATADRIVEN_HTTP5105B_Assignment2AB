@@ -9,8 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="~/Content/reset.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+
 </head>
 <body>
     <header>
@@ -21,18 +20,14 @@
         </div>
     </header>
     <form id="form1" runat="server">
-        <div>
+            <asp:ContentPlaceHolder ID="LoginForm" runat="server">
+            </asp:ContentPlaceHolder> 
             <asp:ContentPlaceHolder ID="StudentList" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-        <div>
+            </asp:ContentPlaceHolder>        
             <asp:ContentPlaceHolder ID="StudentAdd" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
-        <div>
             <asp:ContentPlaceHolder ID="StudentUpdate" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
     </form>
     <footer>
         <div class="cwidth">
