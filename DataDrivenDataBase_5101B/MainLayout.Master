@@ -13,6 +13,13 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <header>
+        <div class="cwidth">
+            <div class="title">
+                HTTP_5101B - DATADRIVEN ASSIGNMENT
+            </div>
+        </div>
+    </header>
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="StudentList" runat="server">
@@ -27,5 +34,12 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <footer>
+        <div class="cwidth">
+            <div class="footerContent">
+                &copy;HTTP_5101B-datadrivenassignment. All rights reserved 
+            </div> 
+        </div>
+    </footer>
 </body>
 </html>
