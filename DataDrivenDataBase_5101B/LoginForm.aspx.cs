@@ -9,18 +9,22 @@ using System.Diagnostics;
 
 namespace DataDrivenDataBase_5101B
 {
-    public partial class login : System.Web.UI.Page
+    public partial class LoginForm : System.Web.UI.Page
     {
+
+        public static string Username_user = "";
+        string Password_user = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (Page.IsPostBack)
             {
                 Page.Validate();
                 if (Page.IsValid)
                 {
                     //Storing the data of input fields to variables.
-                    string Username = username.Text.ToString();
-                    string Password = password.Text.ToString();
+                    Username_user = username.Text.ToString();
+                    Password_user = password.Text.ToString();
 
                     //making an object of SCHOOLDB class.
                     var db = new SCHOOLDB();
@@ -30,10 +34,10 @@ namespace DataDrivenDataBase_5101B
                     string admin_password = "Jennifer";
 
                     //checking if the entered username is not an admin
-                    if(Username != admin_username)
-                    {    
+                    if (Username_user != admin_username)
+                    {
                         //fetching student's first name from database on the basis of student number used as username.
-                        Dictionary<String, String> student_record = db.FindStudent(Username);
+                        Dictionary<String, String> student_record = db.FindStudent(Username_user);
                         //checking if record exists
                         if (student_record.Contains(new KeyValuePair<string, string>("row", "0")))
                         {
@@ -41,9 +45,9 @@ namespace DataDrivenDataBase_5101B
                         }
                         else
                         {
-                            if (Password == student_record["STUDENTFNAME"])
+                            if (Password_user == student_record["STUDENTFNAME"])
                             {
-                                Response.Redirect("~/test.html");
+                                Response.Redirect("~/StudentInfo.aspx");
                             }
                             else
                             {
@@ -54,7 +58,7 @@ namespace DataDrivenDataBase_5101B
                     //if username is an admin username
                     else
                     {
-                        if(Password == admin_password)
+                        if (Password_user == admin_password)
                         {
                             Response.Redirect("~/StudentList.aspx");
                         }
@@ -82,9 +86,11 @@ namespace DataDrivenDataBase_5101B
                         Debug.WriteLine(studentName);
                     }*/
 
-                    
+
                 }
             }
+            Debug.WriteLine(Username_user);
         }
+        
     }
 }

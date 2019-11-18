@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MainLayout.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="DataDrivenDataBase_5101B.login" %>
-
-<asp:Content ID="LoginForm" ContentPlaceHolderID="LoginForm" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainLayout.Master" AutoEventWireup="true" CodeBehind="LoginForm.aspx.cs" Inherits="DataDrivenDataBase_5101B.LoginForm" %>
+<asp:Content ID="Login_Form" ContentPlaceHolderID="LoginForm" runat="server">
+    
     <h1>Log In Your Account</h1>
     <div id="display" runat="server"></div>   
     <div>
@@ -18,7 +18,6 @@
 
 
 
-</asp:Content>
 
- 
+</asp:Content>
 

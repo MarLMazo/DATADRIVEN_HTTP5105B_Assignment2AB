@@ -10,7 +10,7 @@
 namespace DataDrivenDataBase_5101B {
     
     
-    public partial class login {
+    public partial class LoginForm {
         
         /// <summary>
         /// display control.

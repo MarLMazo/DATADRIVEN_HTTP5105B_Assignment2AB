@@ -31,6 +31,15 @@ namespace DataDrivenDataBase_5101B {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder LoginForm;
         
         /// <summary>
+        /// StudentInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder StudentInfo;
+        
+        /// <summary>
         /// StudentList control.
         /// </summary>
         /// <remarks>
