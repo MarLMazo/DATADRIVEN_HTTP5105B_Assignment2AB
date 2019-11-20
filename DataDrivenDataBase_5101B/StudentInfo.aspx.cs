@@ -25,6 +25,7 @@ namespace DataDrivenDataBase_5101B
                 string studentfirstname = row["STUDENTFNAME"];
                 string studentlastname = row["STUDENTLNAME"];
                 string enrolmentdate = row["ENROLMENTDATE"];
+
                 StudentDetails.InnerHtml = "<div class=\"Detailslistitem\">";
                 StudentDetails.InnerHtml += "<div> Name: "+ studentfirstname +" "+ studentlastname+ "</div>";
                 StudentDetails.InnerHtml += "<div> Student Number: " + StudentNumber + "</div>";

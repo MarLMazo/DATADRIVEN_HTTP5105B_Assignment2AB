@@ -18,11 +18,13 @@ namespace DataDrivenDataBase_5101B
 
             if (!IsPostBack)
             {
+                //Getting Values in the StudentList.aspx.cs file to be shown in the form of StudentUpdateForm
                 student_fname.Text = StudentList.student_fname.ToString();
                 student_lname.Text = StudentList.student_lname.ToString();
                 student_number.Text = StudentList.student_number.ToString();
                 //student_enrolment.Text = StudentList.student_enrolment.ToString();
             }   
+            // This StudentId data is outside postback since we dont want this to be constant to be used for updating the data.
             updatestudentId = StudentList.student_ID;
 
             Button BtnUpdate = new Button()
@@ -34,6 +36,7 @@ namespace DataDrivenDataBase_5101B
 
         }
 
+        //Once Click, the data will be postback to gather the new data that was change, then it will be used to update the data for that Student
         void UpdateInfo(object sender, EventArgs e)
         {
 

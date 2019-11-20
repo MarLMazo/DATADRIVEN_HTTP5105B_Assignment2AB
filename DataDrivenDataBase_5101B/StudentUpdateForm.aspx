@@ -30,6 +30,7 @@
         </div>
             
         <%--<div>
+            Does Not Need a Date to Update for a student Data
             <label>Please Enter Student Enrolment date</label>
             <asp:TextBox runat="server" ID="student_enrolment"></asp:TextBox>  
             <asp:RequiredFieldValidator runat="server" EnableClientScript="true" ControlToValidate="student_enrolment" ErrorMessage="Please enter enrolment date"></asp:RequiredFieldValidator>

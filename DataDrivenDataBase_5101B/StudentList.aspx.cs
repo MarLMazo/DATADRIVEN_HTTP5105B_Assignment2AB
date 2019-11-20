@@ -12,7 +12,7 @@ namespace DataDrivenDataBase_5101B
 {
     public partial class StudentList : System.Web.UI.Page
     {
-        //Strings to be used to send values to the other aspx file
+        //Strings to be used to send values to the other StudentUpdateForm.aspx file
         public static string student_fname = "";
         public static string student_lname = "";
         public static string student_number = "";
@@ -47,6 +47,7 @@ namespace DataDrivenDataBase_5101B
             {
                 string studentID = row["STUDENTID"];
                 // Creating a DIV by g_mani on September 13,2013 https://forums.asp.net/t/1935334.aspx?creating+div+html+control+dynamically
+                //Create a DIV that includes all the student data with a button for update and delete
                 System.Web.UI.HtmlControls.HtmlGenericControl createDiv = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
                 //createDiv.ID = studentID;
                 createDiv.Attributes["class"] = "listitem";
@@ -63,6 +64,7 @@ namespace DataDrivenDataBase_5101B
                 string enrolmentdate = row["ENROLMENTDATE"];
                 createDiv.InnerHtml += "<div>" + enrolmentdate + "</div>";
               
+                //Creating a new Button that will be added to every student data
                 Button BtnUpdate = new Button()
                 {
                     Text = "Update",
@@ -170,6 +172,7 @@ namespace DataDrivenDataBase_5101B
         void AddData(object sender, EventArgs e)
         {
             //Paul Grimshaw April 2012 in https://stackoverflow.com/questions/10180930/asp-net-open-new-webform-on-click-of-button
+            // Once Add button is click, it will redirect to the StudentAddForm.aspx
             Response.Redirect("~/StudentAddForm.aspx");
         }
     }
