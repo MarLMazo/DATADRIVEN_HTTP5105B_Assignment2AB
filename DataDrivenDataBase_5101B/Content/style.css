@@ -1,10 +1,15 @@
-﻿html {
+﻿
+
+html {
     box-sizing: border-box;
 }
 
 *, *::before, *::after {
     box-sizing: inherit;
 }
+
+
+
 
 body {
     font-size: 1em;
@@ -75,4 +80,6 @@ h1 {
 #display{
     color:red;
 }
+
+
 

@@ -23,7 +23,7 @@ namespace DataDrivenDataBase_5101B
         private static string Password { get { return "root"; } }
         private static string Database { get { return "school"; } }
         private static string Server { get { return "localhost"; } }
-        private static string Port { get { return "8889"; } }
+        private static string Port { get { return "3306"; } }
 
         //ConnectionString is something that we use to connect to a database
         private static string ConnectionString
@@ -166,5 +166,7 @@ namespace DataDrivenDataBase_5101B
 
             return student;
         }
+
+
     }
 }
