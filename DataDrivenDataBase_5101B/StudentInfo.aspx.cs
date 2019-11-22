@@ -11,6 +11,10 @@ namespace DataDrivenDataBase_5101B
 {
     public partial class StudentInfo : System.Web.UI.Page
     {
+        public void LogOut(object sender, EventArgs e)
+        {
+            Response.Redirect("~/LoginForm.aspx");
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             string StudentNumber = LoginForm.Username_user;

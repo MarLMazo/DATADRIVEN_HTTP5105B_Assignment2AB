@@ -175,5 +175,10 @@ namespace DataDrivenDataBase_5101B
             // Once Add button is click, it will redirect to the StudentAddForm.aspx
             Response.Redirect("~/StudentAddForm.aspx");
         }
+
+        public void LogOut(object sender, EventArgs e)
+        {
+            Response.Redirect("~/LoginForm.aspx");
+        }
     }
 }

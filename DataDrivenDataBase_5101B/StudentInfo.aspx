@@ -5,5 +5,7 @@
     <div id="StudentDetails" runat="server">
 
     </div>
+
+    <asp:Button runat="server" ID="logout_button" OnClick="LogOut" text="LOGOUT" />
     
 </asp:Content>

@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainLayout.Master" AutoEventWireup="true" CodeBehind="StudentList.aspx.cs" Inherits="DataDrivenDataBase_5101B.StudentList" %>
 
 <asp:Content ID="Student_List" ContentPlaceHolderID="StudentList" runat="server">
+    <asp:Button runat="server" ID="logout_button" OnClick="LogOut" text="LOGOUT" />
     <h1>Students</h1>
 
     <div id="students_result" class="_table" runat="server">

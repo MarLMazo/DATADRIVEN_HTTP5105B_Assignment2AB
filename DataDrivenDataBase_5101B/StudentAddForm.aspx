@@ -14,7 +14,7 @@
             <label>Please Enter Student Last Name</label>
             <asp:TextBox runat="server" ID="student_lname" placeholder="ex. George"></asp:TextBox>          
             <asp:RequiredFieldValidator runat="server" EnableClientScript="true" ControlToValidate="student_lname" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator runat="server" EnableClientScript="true" ControlToValidate="student_fname" ValidationExpression="^[a-zA-Z'.\s]{1,50}" ErrorMessage="Please enter a valid first name" ForeColor="Red"/>
+            <asp:RegularExpressionValidator runat="server" EnableClientScript="true" ControlToValidate="student_lname" ValidationExpression="^[a-zA-Z'.\s]{1,50}" ErrorMessage="Please enter a valid last name" ForeColor="Red"/>
         </div>
         <div>
             <label>Please Enter Student Number:</label>
